@@ -1,0 +1,3513 @@
+TraceView Name:,Technical Requirements,,,,,,
+,,,,,,,
+Source,,,,1 Level Downstream,,,
+Item Type,ID,Name,Description,Item Type,ID,Name,Description
+Technical Requirement,GDP-GDSTR-7,Automatically clear printer warning,System shall automatically clear the printer warning message after 60 seconds.,,,,
+Technical Requirement,GDP-GDSTR-8,Automatically celete PowerStatus.log,"System shall automatically delete ""PowerStatus.log"" after default",,,,
+Technical Requirement,GDP-GDSTR-9,Matching report title and footer text,"With the ""Test Results by Loaded Date"" report, the title and footer text shall match.",,,,
+Technical Requirement,GDP-GDSTR-10,Automatically resume loading cassettes,"When incubator space becomes available, system shall automatically resume loading cassettes. (Examples: Serial Incubation, cassettes free spaces as they are emptied to trash)",,,,
+Technical Requirement,GDP-GDSTR-11,Generate reports against archived data,System shall provide functionality to generate reports against archived data.,,,,
+Technical Requirement,GDP-GDSTR-12,"Report duplicate ""Serial Number"" cassette detected","System shall report to user on detecting a duplicate ""Serial Number"" cassette being loaded into system.",,,,
+Technical Requirement,GDP-GDSTR-13,Move duplicate cassette to the Output Queue,"On detecting a duplicate SN during loading, the System shall move the duplicate cassette to the Output Queue. Note: This may entail moving cassette first to incubator and marking to Output Queue.",,,,
+Technical Requirement,GDP-GDSTR-14,Display multiple warning messages,System shall have the ability to displayed multiple warning message,,,,
+Technical Requirement,GDP-GDSTR-15,Prevent loading when shuttle is in wrong position,"System shall not attempt cassette loading while the shuttle is in the incorrect ""Output Queue"" position. Note: This may only need to be checked during recovery/cleanup.",,,,
+Technical Requirement,GDP-GDSTR-16,Remove harsh wording from customer facing text,"Remove any customer facing text (UI, reports) containing harsh words (Fatal failure).",,,,
+Technical Requirement,GDP-GDSTR-17,Reject cassettes containing LIMS labels,A non-LIMS System shall reject any cassettes containing LIMS labels. Those cassettes shall be moved to Output Queue similar to duplicate SN.,,,,
+Technical Requirement,GDP-GDSTR-18,Unlimited length SampleID and Batch/LOT,"System shall support ""Sample ID"" barcode label with unlimited length SampleID and Batch/LOT.",,,,
+Technical Requirement,GDP-GDSTR-19,Improved vision calibration workflow,System shall have improved camera vision calibration/setup screen,,,,
+Technical Requirement,GDP-GDSTR-20,Push LIMS settings to GrowthDirect,"LIMS system shall have ability to push updated setting; Sample ID, Methods, Handling Rules to GrowthDirect system.",,,,
+Technical Requirement,GDP-GDSTR-22,Display LIMS ID instead of SN,"For Audit reports, the System shall have ability to display LIMS ID instead of cassette SN.",Verification,GDP-Verfication-1866,Test the display of LIMS ID in User Activity in Audit Report ,"This test is to test 20 character LIMS ID with Multiple 20-character Sample IDs
+
+
+  "
+Technical Requirement,GDP-GDSTR-22,Display LIMS ID instead of SN,"For Audit reports, the System shall have ability to display LIMS ID instead of cassette SN.",Verification,GDP-Verfication-1867,Test LIMS ID of cancel order displays in User Activity in Audit Report ,"This test is to test 20 character LIMS ID with Multiple 20-character Sample IDs
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1454,Test 0046 Printing over to Network Barcode Printer  - Sample ID labels ,"This adhoc test case is to test printing with a network Barcode printer
+
+
+ 
+
+ 
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1455,Test 0049 Printing  over to USB Barcode printer  - Sample ID labels ,"This adhoc test case is to test printing with a USB Barcode printer
+
+
+ 
+
+ 
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1456,Test 0047 Printing over to Network Barcode Printer - Same LIMS labels and same Sample labels,"This adhoc test case is to test printing with a network Barcode printer
+
+
+ 
+
+ 
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1457,Test 0050 Printing over to USB Barcode printer - Same LIMS labels with same Sample labels,"This adhoc test case is to test printing with a network Barcode printer
+
+
+ 
+
+ 
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1458,Test 0052 Printing over to network paper printer  - Test Report,"This adhoc test case is to test printing with a USB Barcode printer
+
+
+ 
+
+ 
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1459,Test 0054 Backing up the Database to Bridge,"This adhoc test case is to test Backing up the Database to Bridge
+
+
+ 
+
+ 
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1460,Test 0048 Printing over to Network Barcode Printer - a LIMS label with Different Sample ID Labels,"This adhoc test case is to test printing with a network Barcode printer
+
+
+ 
+
+ 
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1461,Test 0051 Printing over to USB Barcode printer - Sample LIMS label with Different Sample labels,"This adhoc test case is to test printing with a network Barcode printer
+
+
+ 
+
+ 
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1462,Test 0053 Printing over to network paper printer  - Test Report,"This adhoc test case is to test printing with a USB Barcode printer
+
+
+ 
+
+ 
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1554,Test Delete button,"This test case is to test that no error occurs when all default buttons are click 
+
+
+  
+
+
+  Setup and Configuration 
+
+
+ 1. GrowthDirect with Hardware Simulator
+
+
+ 2. Install GrowthDirect application and Install Bridge service on the bridge
+
+
+ 3. Connect Bridge to GrowthDirect System
+
+
+ 4. Launch GrowthDirect 
+
+
+ 4. Do not do anything else,see the screenshot below
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1555,Test Edit button,"This test case is to test that no error occurs when all default buttons are click 
+
+
+  
+
+
+  Setup and Configuration:  
+
+
+ Assumed that these Setup Configuration steps are done on previous test case. Now you just need to continue
+
+
+ 1. GrowthDirect with Hardware Simulator
+
+
+ 2. Install GrowthDirect application and Install Bridge service on the bridge
+
+
+ 3. Connect Bridge to GrowthDirect System
+
+
+ 4. Launch GrowthDirect 
+
+
+ 5. Do not do anything else,see the screenshot below"
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1556,Test Delete button and Edit buttons ,"This test case is to test that no error occurs when a user clicks Delete button to delete nothing in this case then clicks Edit button. 
+
+
+  
+
+
+  Setup and Configuration:  
+
+
+ Assumed that these Setup Configuration steps are done on previous test case. Now you just need to continue
+
+
+ 1. GrowthDirect with Hardware Simulator
+
+
+ 2. Install GrowthDirect application and Install Bridge service on the bridge
+
+
+ 3. Connect Bridge to GrowthDirect System
+
+
+ 4. Launch GrowthDirect 
+
+
+ 4. Do not do anything else,see the screenshot below"
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1557,Test Barcode Printer default page,"This test case is to test that no error occurs 
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1558,Test Printer Setting page appearance after fresh installation,"This test case is to test that Default Printer Settings appearance
+
+
+  
+
+
+ 1. GrowthDirect with Hardware Simulator
+
+
+ 2. Install GrowthDirect application and Install Bridge service on the bridge
+
+
+ 3. Connect Bridge to GrowthDirect System
+
+
+ 4. Launch GrowthDirect 
+
+
+ 5. Do not do anything else,
+
+
+ 6. The screenshot below is Printers setting screen
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1561,Test USB Barcode printer adding page with empty devices,"This test case is to test that USB Barcode printer adding page when it is no device. 
+
+
+  
+
+
+ Setup and Configuration steps: 
+
+
+ On Bridge: 
+
+
+ 1. Go to Control Panel, click Devices and Printers
+
+
+ 2. No USB barcode printer is configured    
+
+
+  
+
+
+ The following is USB button default page
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1562,Test Network button in Barcode Printer page,"This test case is to test that no error occurs 
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1563,Test Default Setting page in Document Printer page,"This test case is to test that no error occurs 
+
+
+  
+
+
+ Setup and Configuration Steps: 
+
+
+ The following is document printer default page
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1564,Test Login in Printer Settings page with a valid password,"This test is to test Security of Printer setting page
+
+
+  
+
+
+ Setup and Configuration Steps:
+
+
+ Ensure that ""Allow Blank User name and Password"" is  not checked ask SQA personnel if need help"
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1565,Test Login in Printer Settings page with a invalid password,This test is to test Security of Printer setting page
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1566,Test adding a Network Barcode printer," 
+
+
+  
+
+
+ Setup and Configuration:
+
+
+ 1. Cab EOS1/300 Barcode Printer is connected to Corporate Network
+
+2. You can print the EOS1/300 Barcode printer from GrowthDirect System server"
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1567,Test editing existing Printer Name field,"This test case is to test update of Printer name field 
+
+
+  
+
+
+  
+
+
+ Setup and Configuration steps:
+
+
+ 1. Cab EOS1/300 Barcode Printer is connected to Corporate Network
+
+2. You can print the EOS1/300 Barcode printer from GrowthDirect System server
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1568,Test Audit Report for printer setting login,"This test is to test Security of Printer setting page
+
+
+  
+
+
+  
+
+
+ Setup and Configuration steps:
+
+
+  Ensure that ""Allow Blank User name and Password"" is not checked ask SQA personnel if need help"
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1569,Test printing Sample labels to Network Barcode printer,"This test case is to test printing
+
+
+  
+
+
+  
+
+
+  
+
+
+ Setup and Configuration Steps:
+
+
+ 1. Create method name it M1, Action/Aler name it as A1, Handling Rule name it as H1, SampleID name it as S1
+
+2. Create a WorkList with M1, A1, and H1. then name it as ""Worklist Test"""
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1570,Test printing LIMS labels to Network Barcode printer,"This test case is to test printing 
+
+
+  
+
+
+  
+
+
+  Setup and Configuration steps: 
+
+
+ 1. Create method name it M1, Action/Aler name it as A1t, Handling Rule name it as H1, SampleID name it as S1
+
+2. Create a WorkList with M1, A1, and H1. then name it as ""Worklist Test""
+
+
+ 3. On Bridge, Launch LIMS simulator
+
+
+ 4. Create 20 LIMS order and let system consumes request file"
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1571,Test adding USB Barcode printer,"This test case is to test adding USB Cab EOS1/300 Printer driver
+
+
+  
+
+
+  
+
+
+ Setup and Configuration Steps:
+
+
+ On Bridge computer
+
+
+ 1. Install USB Cab EOS1/300 Printer driver
+
+
+ 2. Connect USB USB Cab EOS1/300 Printer driver to bridge with USB cable (do not connect Network cable) 
+
+
+ 3. Verify that USB Cab EOS1/300 Printer driver is working"
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1572,Test printing 20 Sample labels to USB Barcode printer ,"This test case is to test adding USB Cab EOS1/300 Printer driver
+
+
+  
+
+
+ Setup and Configuration Steps:
+
+
+ On Bridge:
+
+
+ On Bridge computer
+
+
+ 1. Install USB Cab EOS1/300 Printer driver
+
+
+ 2. Connect USB USB Cab EOS1/300 Printer driver to bridge with USB cable (do not connect Network cable) 
+
+
+ 3. Verify that USB Cab EOS1/300 Printer driver is working
+
+
+  
+
+
+ On GrowthDirect System
+
+
+ 1. Create method name it M1, Action/Aler name it as A1t, Handling Rule name it as H1, SampleID name it as S1
+
+2. Create a WorkList with M1, A1, and H1. then name it as ""Worklist Test""
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1573,Test printing 20 LIMS labels to USB Barcode printer,"This test case is to test printing to USB Barcode printer
+
+
+  
+
+
+  
+
+
+ Setup and configuration steps:
+
+
+ On Bridge:
+
+
+ On Bridge computer
+
+
+ 1. Install USB Cab EOS1/300 Printer driver
+
+
+ 2. Connect USB USB Cab EOS1/300 Printer driver to bridge with USB cable (do not connect Network cable) 
+
+
+ 3. Verify that USB Cab EOS1/300 Printer driver is working
+
+
+  
+
+
+ On GrowthDirect System
+
+
+ 1. Create method name it M1, Action/Aler name it as A1t, Handling Rule name it as H1, SampleID name it as S1
+
+2. Create a WorkList with M1, A1, and H1. then name it as ""Worklist Test"""
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1574,Test adding multiple Network EOS1/300 Network printers,"This test case is to test adding multiple printers
+
+
+  
+
+
+  
+
+
+ Setup and Configuration steps:
+
+
+ On Bridge
+
+
+ 1. Identify and locate three  EOS1/300 Network printers; Printer 1: 10.0.0.85, Printer 2: 10.0.0.90, Printer 3: 10.0.0.219, Printer 4: 10.0.0.221
+
+
+ 2. All above Cab EOS1/300 Barcode Printers are connected to Corporate Network
+
+3. You can ping all EOS1/300 Barcode printer from GrowthDirect System server
+
+
+  
+
+
+ The following screenshot is for reference"
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1576,Test printing 20 Sample labels to Multiple Network Barcode printers,"This test case is to test printing 
+
+
+  
+
+
+ Setup and Configuration Steps:
+
+
+ On Bridge
+
+
+ 1. Identify and locate three  EOS1/300 Network printers; Printer 1: 10.0.0.85, Printer 2: 10.0.0.90, Printer 3: 10.0.0.219, Printer 4: 10.0.0.221
+
+
+ 2. All above Cab EOS1/300 Barcode Printers are connected to Corporate Network
+
+3. You can ping all EOS1/300 Barcode printer from GrowthDirect System server
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1577,Test printing 20 LIMS labels to Multiple Network Barcode printers,"This test case is to test multiple Network Barcode printers
+
+
+  
+
+
+ Setup and Configuration steps:
+
+
+ On GrowthDirect System
+
+
+ 1. Identify a few network barcode printers 
+
+
+ 2. Printer Settings, add those network barcode printers 
+
+
+ 3. Create method name it M1, Action/Aler name it as A1t, Handling Rule name it as H1, SampleID name it as S1
+
+ 
+
+
+  
+
+
+ On Bridge
+
+
+ 1.  Make sure that at least 3 network barcode printer are available for testing
+
+
+ 2. LIMS simulator is available 
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1578,Test Barcode printer list on Bridge automatically populated on Printer drop-down list of GrowthDirect System,"This test case is to test that USB Barcode printer adding page when Bridge has been configured with USB Barcode printers 
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1580,Test Printer Name field length,This test case is to test update of Printer name field 
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1581,Test Cancel button,"This test case is to test that Cancel button is click, the event is canceled. 
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1583,Test printing 100 Sample labels to USB Barcode printer ,"This test case is to test adding USB Cab EOS1/300 Printer driver
+
+
+  
+
+
+ Setup and Configuration Steps:
+
+
+ On Bridge:
+
+
+ On Bridge computer
+
+
+ 1. Install USB Cab EOS1/300 Printer driver
+
+
+ 2. Connect USB USB Cab EOS1/300 Printer driver to bridge with USB cable (do not connect Network cable) 
+
+
+ 3. Verify that USB Cab EOS1/300 Printer driver is working
+
+
+  
+
+
+ On GrowthDirect System
+
+
+ 1. Create method name it M1, Action/Aler name it as A1t, Handling Rule name it as H1, SampleID name it as S1
+
+2. Create a WorkList with M1, A1, and H1. then name it as ""Worklist Test""
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1584,Test printing 200 LIMS labels to USB Barcode printer,"This test case is to test printing to USB Barcode printer
+
+
+  
+
+
+  
+
+
+ Setup and configuration steps:
+
+
+ On Bridge:
+
+
+ On Bridge computer
+
+
+ 1. Install USB Cab EOS1/300 Printer driver
+
+
+ 2. Connect USB USB Cab EOS1/300 Printer driver to bridge with USB cable (do not connect Network cable) 
+
+
+ 3. Verify that USB Cab EOS1/300 Printer driver is working
+
+
+  
+
+
+ On GrowthDirect System
+
+
+ 1. Create method name it M1, Action/Aler name it as A1t, Handling Rule name it as H1, SampleID name it as S1
+
+2. Create a WorkList with M1, A1, and H1. then name it as ""Worklist Test"""
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1587,Test printing 200 Sample labels to Multiple Network Barcode printers,"This test case is to test printing 
+
+
+  
+
+
+ Setup and Configuration Steps:
+
+
+ On Bridge
+
+
+ 1. Identify and locate three  EOS1/300 Network printers; Printer 1: 10.0.0.85, Printer 2: 10.0.0.90, Printer 3: 10.0.0.219, Printer 4: 10.0.0.221
+
+
+ 2. All above Cab EOS1/300 Barcode Printers are connected to Corporate Network
+
+3. You can ping all EOS1/300 Barcode printer from GrowthDirect System server
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1588,Test printing 200 LIMS labels to Multiple Network Barcode printers,"This test case is to test multiple Network Barcode printers
+
+
+  
+
+
+ Setup and Configuration steps:
+
+
+ On GrowthDirect System
+
+
+ 1. Identify a few network barcode printers 
+
+
+ 2. Printer Settings, add those network barcode printers 
+
+
+ 3. Create method name it M1, Action/Aler name it as A1t, Handling Rule name it as H1, SampleID name it as S1
+
+ 
+
+
+  
+
+
+ On Bridge
+
+
+ 1.  Make sure that at least 3 network barcode printer are available for testing
+
+
+ 2. LIMS simulator is available 
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1589,Test adding a document printer,"This test case is to test adding a document printer
+
+
+  
+
+
+ Setup and Configuration steps: 
+
+
+ On Bridge:
+
+
+ 1. Go to Control Panel, click Devices and Printers, click ""Add a printer"" , Select Network Wireless or Bluetooth Printers, click Next button
+
+
+ 2. Select  ""HP Color LaserJet CP5220 Series PCL6 on 10.0.0.10"", click next button and finish it up
+
+
+ 3. Ensure that ""HP Color LaserJet CP5220 Series PCL6 on 10.0.0.10"" is available in Devices and Printers
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1590,Test printing Test report to a document printer,"This test case is to test adding a document printer
+
+
+  
+
+
+ Setup and Configuration steps: if printer is alreadyy configured, skip this Setup steps
+
+
+ On Bridge:
+
+
+ 1. Go to Control Panel, click Devices and Printers, click ""Add a printer"" , Select Network Wireless or Bluetooth Printers, click Next button
+
+
+ 2. Select  ""HP Color LaserJet CP5220 Series PCL6 on 10.0.0.10"", click next button and finish it up
+
+
+ 3. Ensure that ""HP Color LaserJet CP5220 Series PCL6 on 10.0.0.10"" is available in Devices and Printers
+
+
+  
+
+
+  
+
+
+ GrowthDirect:
+
+
+ Select Printer drop-down dialog box
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1591,Test printing Audit Report to a document printer,"This test case is to test adding a document printer
+
+
+  
+
+
+ Setup and Configuration steps: if printer is alreadyy configured, skip this Setup steps
+
+
+ On Bridge:
+
+
+ 1. Go to Control Panel, click Devices and Printers, click ""Add a printer"" , Select Network Wireless or Bluetooth Printers, click Next button
+
+
+ 2. Select  ""HP Color LaserJet CP5220 Series PCL6 on 10.0.0.10"", click next button and finish it up
+
+
+ 3. Ensure that ""HP Color LaserJet CP5220 Series PCL6 on 10.0.0.10"" is available in Devices and Printers
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1592,Test printing Custom Report to a document printer,"This test case is to test adding a document printer
+
+
+  
+
+
+ Setup and Configuration steps: if printer is already configured, skip this Setup steps
+
+
+ On Bridge:
+
+
+ 1. Go to Control Panel, click Devices and Printers, click ""Add a printer"" , Select Network Wireless or Bluetooth Printers, click Next button
+
+
+ 2. Select  ""HP Color LaserJet CP5220 Series PCL6 on 10.0.0.10"", click next button and finish it up
+
+
+ 3. Ensure that ""HP Color LaserJet CP5220 Series PCL6 on 10.0.0.10"" is available in Devices and Printers
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1593,Test Printer-off line BUI display when USB Barcode printer connection is lost,"This test case is to Printer-offline display when USB barcode printer connection is lost
+
+
+  
+
+
+  
+
+
+ Setup and configuration steps: skip these steps if it is already done. 
+
+
+ On Bridge:
+
+
+ On Bridge computer
+
+
+ 1. Install USB Cab EOS1/300 Printer driver
+
+
+ 2. Connect USB USB Cab EOS1/300 Printer driver to bridge with USB cable (do not connect Network cable) 
+
+
+ 3. Verify that USB Cab EOS1/300 Printer driver is working
+
+
+  
+
+
+ On GrowthDirect System
+
+
+ 1. Create method name it M1, Action/Aler name it as A1t, Handling Rule name it as H1, SampleID name it as S1
+
+2. Create a WorkList with M1, A1, and H1. then name it as ""Worklist Test""
+
+
+ 3. Launch LIMS simulator "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1594,Test printer can print again right after USB connection is reestablished,"This test case is to the printer can print again right after USB connection is reestablished
+
+
+  
+
+
+  
+
+
+ Setup and configuration steps: skip these steps if it is already done. 
+
+
+ On Bridge:
+
+
+ On Bridge computer
+
+
+ 1. Install USB Cab EOS1/300 Printer driver
+
+
+ 2. Connect USB USB Cab EOS1/300 Printer driver to bridge with USB cable (do not connect Network cable) 
+
+
+ 3. Verify that USB Cab EOS1/300 Printer driver is working
+
+
+  
+
+
+ On GrowthDirect System
+
+
+ 1. Create method name it M1, Action/Aler name it as A1t, Handling Rule name it as H1, SampleID name it as S1
+
+2. Create a WorkList with M1, A1, and H1. then name it as ""Worklist Test""
+
+
+ 3. Launch LIMS simulator "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1595,Test Printer offline BUI display when Network Barcode printer connection is lost,"This test case is to Printer-offline display when USB barcode printer connection is lost
+
+
+  
+
+
+  
+
+
+ Setup and configuration steps: skip these steps if it is already done. 
+
+
+ On Bridge:
+
+
+ On Bridge computer
+
+
+ 1. Install USB Cab EOS1/300 Printer driver
+
+
+ 2. Connect USB USB Cab EOS1/300 Printer driver to bridge with USB cable (do not connect Network cable) 
+
+
+ 3. Verify that USB Cab EOS1/300 Printer driver is working
+
+
+  
+
+
+ On GrowthDirect System
+
+
+ 1. Create method name it M1, Action/Aler name it as A1t, Handling Rule name it as H1, SampleID name it as S1
+
+2. Create a WorkList with M1, A1, and H1. then name it as ""Worklist Test""
+
+
+ 3. Launch LIMS simulator "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1600,Test Multiple GrowthDirect system  can print to the same Network Barcode printer,"This test case is to test multiple GrowthDirect system can print to the same Network Barcode printers
+
+
+  
+
+
+ Setup and Configuration steps:
+
+
+  On GrowthDirect System 1 
+
+
+ 1. Identify a few network barcode printers 
+
+
+ 2. Printer Settings, add those network barcode printers 
+
+
+ 3. Create method name it M1, Action/Aler name it as A1t, Handling Rule name it as H1, SampleID name it as S1
+
+
+  
+
+
+  On Bridge 1 
+
+
+ 1. LIMS simulator is available 
+
+
+  
+
+
+  On GrowthDirect System 2 
+
+
+ 1. Identify a few network barcode printers 
+
+
+ 2. Printer Settings, add those network barcode printers 
+
+
+ 3. Create method name it M2, Action/Aler name it as A2, Handling Rule name it as H2, SampleID name it as S2
+
+
+  
+
+
+  On Bridge2 
+
+
+ 1. LIMS simulator is available 
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1691,SRD1018 Bridge computer setting in General Settings,"Test case to cover the bridge setting in the General Setting Tab
+
+
+  
+
+
+ General Settings Tab:
+
+
+  
+
+
+ 
+
+ 
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1692,SRD1018 Refresh of Shared Printers from Bridge Computer,"Test case to cover the bridge setting in the General Setting Tab
+
+
+  
+
+
+ General Settings Tab:
+
+
+  
+
+
+  
+
+
+  
+
+
+ Printer Setting Page
+
+
+  
+
+
+ 
+
+ 
+
+
+  "
+Technical Requirement,GDP-GDSTR-23,Offload print to Bridge Computer,System shall offload print (reports/barcode) functionality to Bridge computer.,Verification,GDP-Verfication-1693,SRD1018 Network Barcode printer default port," 
+
+
+  
+
+
+ Setup and Configuration:
+
+
+ 1. Cab EOS1/300 Barcode Printer is connected to Corporate Network
+
+2. You can print the EOS1/300 Barcode printer from GrowthDirect System server"
+Technical Requirement,GDP-GDSTR-24,Use Customer's SMTP server,System shall have ability to configure  Bridge Computer to use Customer's SMTP server (instead of  Bridge Computer SMTP server),Verification,GDP-Verfication-1634,SRD 6001 Use customers SMTP server,"Testing requires an instrument or simulator configured with a bridge computer.  
+
+
+  
+
+
+   Bridge computer SMTP setup is required as per     RDT0047 SMTP Server Installation Instructions Rev A  
+
+
+  
+
+
+   Growth Direct configuration  
+
+
+  
+
+
+      
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-24,Use Customer's SMTP server,System shall have ability to configure  Bridge Computer to use Customer's SMTP server (instead of  Bridge Computer SMTP server),Verification,GDP-Verfication-1635,SRD 6001 Overview,Ability to configure Bridge Computer to use Customer's SMTP server
+Technical Requirement,GDP-GDSTR-25,Improved loading and unloading cassettes,System shall have improved loading/unloading cassettes to allow seamless loadings after emptying a full trash bin. This handles situations where customers has comes in the morning (or after weekend) to facilitate loading new cassettes while system is moving cassettes to trash.,,,,
+Technical Requirement,GDP-GDSTR-26,"Remove ""false positive detected"" from event","System shall remove ""false positive detected"" alarm from cassette event when count demoted.",,,,
+Technical Requirement,GDP-GDSTR-27,Reduce diagnostic email log file size,System shall have options to reduce diagnostic email log file size. This option can either be send a day's worth or only selected log files.,,,,
+Technical Requirement,GDP-GDSTR-28,Optimize SIO operations,System shall optimize SIO operations. This could be reducing frequency or optimize individual SIO operations.,,,,
+Technical Requirement,GDP-GDSTR-29,Notify when loading to full incubator,"On attempting to load to full incubator, system shall notify user via system warning and email.",,,,
+Technical Requirement,GDP-GDSTR-30,Prevent high to low temp serial incubation,System shall no longer support option allowing Serial Incubation where cassette to allowed to move from high to low temperature. (In UI prevent ability to create method),,,,
+Technical Requirement,GDP-GDSTR-31,Verify cassette held by IOQ Picker,"In order to avoid false cassettes at IOQ, the system shall verify a cassette is held by IOQ Picker by checking for ""gripper close"" or a valid barcode (currently System assumes cassette is held when Part-Presence sensor is triggered).",,,,
+Technical Requirement,GDP-GDSTR-32,"Email on ""Contact Service"" alarm","System shall send email on ""Contact Service"" Alarm.",,,,
+Technical Requirement,GDP-GDSTR-33,"Default ""Worklist Audit"" report name","When saving ""Worklist Audit"" report as PDF, the default name shall be ""WorklistAuditReport"".",,,,
+Technical Requirement,GDP-GDSTR-34,Warn when no data available for audit report ,"System shall display warning dialog box ""No data is available for this audit report"" when attempting to generate report with empty data table.",,,,
+Technical Requirement,GDP-GDSTR-35,Include horizontal scroll on LIMS tab,System shall have horizontal scroll on LIMS tab allowing complete message to be viewed.,,,,
+Technical Requirement,GDP-GDSTR-36,Upper case letters in Serial Numbers,"When user is manually ordering tests, only serial numbers with upper case letters shall be accepted. Note: As a convenience after entering serial number, all lower case letters entered are converted to upper.",,,,
+Technical Requirement,GDP-GDSTR-37,Improved error messaging when entering names,"When entering names (Methods, Action/Alert, Handling Rules, Worklist) system shall provide improved error message. Note: On implementation is was found the issue was embedded spaces character so removing those character solved issue instead of change message.",,,,
+Technical Requirement,GDP-GDSTR-38,"Import ""Sample ID"" from valid CVS file","System shall only import ""Sample ID"" from CVS file that are valid.",,,,
+Technical Requirement,GDP-GDSTR-39,"Indicate ""User Names"" are case sensitive","System shall provide text to indicate that ""User Names"" are case sensitive",,,,
+Technical Requirement,GDP-GDSTR-40,"Prevent import of duplicate ""Sample IDs""","System shall not allow duplicate ""Sample IDs"" to be imported (via CSV file) into an existing Worklist.",,,,
+Technical Requirement,GDP-GDSTR-41,Include vertical scroll bar for comments,System shall have vertical scroll bar within the Approval Page for the Comments field.,,,,
+Technical Requirement,GDP-GDSTR-42,Prevent alarm for new incubator temperature,"System shall system not display ""Out of bounds"" alarm when entering new incubator temperature settings",,,,
+Technical Requirement,GDP-GDSTR-43,"Show ""doors left open"" in BUI","System shall not cut off ""doors left open"" with in the BUI.",,,,
+Technical Requirement,GDP-GDSTR-44,"Fix defect to allow saving new ""local destination for logs""","Shall fixed defect in IT Settings that prevented saving new ""local destination for logs"" after selecting ""Copy Now"" button",,,,
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-14,Test 0001 Verify Default Settings availability in Exposure settings page," 
+
+
+ 
+	 This Test case is to test that all default settings of Multiple Exposure feature are available and being listed appropriately.
+	 
+		 The first screenshot is to show that where Exposure setting button is located.  
+		 The second screenshot is show that what default settings of Exposure Settings page has.  
+	 
+	 
+ 
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-15,Test 0002 default settings in Exposure Settings page can't be deleted,"This test case is to test that users can't delete all default settings in Multiple Exposure page. 
+
+
+ 
+	 The first screenshot is a Grid Table and second screenshot is a dialog log with ""Default settings cannot be removed""  
+ 
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-16,Test 0004 Media Code Text Box is allowed only upper case letters,"This test cases is to test that Test Media Code Text Box is allowed only upper case letters, if a user enters lower cases which will automatically be converted into upper cases and saved. 
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-17,Test 0005 the maximum length of EM Media Code Text Box with 2 alphabets,This test case is to Test the maximum length of Media Code Text Box with 2 alphabets
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-18,Test 0003 EM Media Code text box doesn't accept more than 2 alphanumeric,"This test case is to test that Media Code field doesn't accept more than 2 alphanumeric. When more than 2 alphanumeric is entered,  a warning dialog displayed 
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-19,Test 0008 EM Media Code text box doesn't accept less than 2 alphabets,"This test case is to test that a warning message appears when less than 2 alphabets is entered., Also nothing is broken"
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-22,Test 0010 the maximum length of EM Media Code text box with two numeric only,"This test case is to test that Media Code text box accepts 2 numeric only and nothing is broken 
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-23,Test 0020 the Maximum length of EM Media Type field with 12 alphanumeric,"This test case is to test the Maximum length of Media Type field. 
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-24,Test 0017 the maximum length of EM Media Type text box with 12 alphanumeric including special characters,"This test case is to test that Media Type field can accept 12 alphanumeric including special characters
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-25,Test 0016 the minimum length of Media Type text box,This test case is to test the minimum length of Media Type Field
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-26,Test 0019 Media Type text box with blank,"This test case is to test that Media Type text box with blank value
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-27,Test 0034  the maximum length of Exposure Time  text box,"This test case is to test the maximum length of Exposure Time text box; allow to enter up to 4 digits 
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-28,Test 0018 EM Exposure Time text box with exceeding maximum length ,"This test case is to test that a warning message prompts when a length is greater than the maximum length of exposure Time field is entered. 
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-29,Test 0037 less than the minimum length of Exposure Time text box,This test case is to test that a warning message appears when a length is less than the minimum length of Exposure Time field is entered. 
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-30,Test 0038 ExposureSettings.xml file having new settings,This test case is to test that all new settings are saved into ExposureSettings.xml file correctly
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-31,"Test 0015 the ""Duplicate Exposure Setting"" warning dialog box appearance of Media Code text box ","This test case is to test that a ""Duplicate Exposure Setting"" warning dialog box appears when a duplicate value is entered into Media Code text box and a duplicate valua is not accepted"
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-32,Test 0040 GrowthDirect automatically recreates ExposureSettings.xml file,"This test case is to test that when ExposureSettings.xml file is deleted, GrowthDirect will automatically regenerate ExposureSettings.xml file with all default settings after GrowthDirect is restarted. "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-34,Test 0025  the maximum length of BB Media Code text box with 2 alphanumeric,This test case is to test the maximum length of Media Code text box with 2 alphanumeric
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-45,Test 0006 EM Media Code text box doesn't accept more than 2 alphabets,"This test case is to test that Media Code field doesn't accept more than 2 alphabets. When more than 2 alphanumeric is entered,  a warning dialog displayed 
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-46,Test 0007 EM Media Code text box doesn't accept more than 2 numeric ,"This test case is to test that Media Code field doesn't accept more than 2 numeric. When more than 2 numeric is entered,  a warning dialog displayed 
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-47,Test 0009 EM Media Code text box doesn't accept less than 2 numeric ,"This test case is to test that a warning message appears when less than 2  numeric is entered., Also nothing is broken"
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-48,Test 0011 BB Media Code text box doesn't accept more than 2 alphanumeric,"This test case is to test that Media Code field doesn't accept more than 2 alphanumeric. When more than 2 alphanumeric is entered,  a warning dialog displayed 
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-49,Test 0021 BB Media Code text box doesn't accept more than 2 alphabets,"This test case is to test that Media Code field doesn't accept more than 2 alphabets. When more than 2 alphanumeric is entered,  a warning dialog displayed 
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-50,Test 0023 BB Media Code text box doesn't accept more than 2 numeric ,"This test case is to test that Media Code field doesn't accept more than 2 numeric. When more than 2 numeric is entered,  a warning dialog displayed 
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-51,Test 0022 BB Media Code text box doesn't accept less than 2 alphabets,"This test case is to test that a warning message appears when less than 2 alphabets is entered., Also nothing is broken"
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-52,Test 0024 BB Media Code text box doesn't accept less than 2 numeric ,"This test case is to test that a warning message appears when less than 2  numeric is entered., Also nothing is broken"
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-53,Test 0026 the maximum length of BB Media Code text box with two numeric only,"This test case is to test that Media Code text box accepts 2 numeric only and nothing is broken 
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-54,Test 0029 the Maximum length of BB Media Type field with 12 alphanumeric,"This test case is to test the Maximum length of Media Type field. 
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-VER-55,Test 0031 the maximum length of Media Type text box with 12 alphanumeric including special characters,"This test case is to test the maximum length of Media Type text box with 12 alphanumeric including special characters
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-Verfication-57,Test 0030 the minimum length of Media Type text box,"This test case is to test the minimum length of Media Type text box.
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-Verfication-58,Test 0032 Media Type text box with blank,"This test case is to test that Media Type text box with a blank value
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-Verfication-981,Test 0033 the maximum length of Exposure Time  text box,"This test case is to test the maximum length of Exposure Time text box; allow to enter up to 4 digits 
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-Verfication-982,Test 0035 Exposure Time text box with exceeding maximum length ,"This test case is to test that a warning message prompts when a length is greater than the maximum length of exposure Time text box is entered. 
+
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-Verfication-983,Test 0036  less than the minimum length of Exposure Time text box,This test case is to test that a warning message appears when a length is less than the minimum length of Exposure Time field is entered. 
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-Verfication-1004,Test 0039 ExposureSettings.xml file having new settings,This test case is to test that all new settings are saved into ExposureSettings.xml file correctly
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-Verfication-1005,"Test 0027 the ""Duplicate Exposure Setting"" warning dialog box appearance of Media Code text box ","This test case is to test that a ""Duplicate Exposure Setting"" warning dialog box appears when a duplicate value is entered into Media Code text box and a duplicate valua is not accepted"
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-Verfication-1031,Test 0012 System with a new Media code and Exposure time 400,"This test case is to test that a new Media Code with exposure time can be added and used. 
+
+Pre-Requisite: 
+
+1. Serial number barcode labels with media code QA are ready for use. Send a request to consumer group for printing out EM
+
+2. Physical  EM cassettes are ready 
+
+3. Print out Sample labels
+
+ "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-Verfication-1299,Test 0013 System with a new Media code and Exposure time  600,"This test case is to test that a new Media Code with exposure time can be added and used. 
+
+Pre-Requisite: 
+
+1. Serial number barcode labels with media code FA are ready for use. Send a request to consumer group for printing out EM
+
+2. Physical  Filtration cassettes are ready 
+
+3. Print out Sample labels
+
+ "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-Verfication-1313,Test 0014 the same deleted Media Code can be re-added.  ,This test case is to test that the same deleted Media Code can be re-added 
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-Verfication-1314,Test 0028 the same deleted Media Code can be re-added.  ,This test case is to test that the same deleted Media Code can be re-added 
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-Verfication-1420,Test 0045 System performance when it has a large number of EM and Filtration cassettes with multiple exposure settings,"This test case is to test GrowthDirect system is sending correct exposure times to Vision server when Exposure time is configured manually.
+
+
+ This test has a large number of EM and Filtration cassettes with multiple different exposure settings. 
+
+Configuration:
+
+Image interval : 4 hour 
+
+Incubation Time: 3 days
+
+Prepare 30 filtration and 30 EM with Media Code: T8, TS,SD, DE, TT, R2, and SD
+
+Print out Sample ID for those cassettes
+
+Configure Exposure setting with the following table
+
+
+
+ 
+
+
+ 
+	 
+		 
+			 Test Type 
+			 Media Code 
+			 Media Type 
+			 Exposure Time(MS) 
+			 Product SKU 
+			 Comment  
+		 
+		 
+			 EM 
+			 T8 
+			 TSA LP80 
+			 200 
+			 SKU-ET80-100 
+			   
+		 
+		 
+			 EM 
+			 T4 
+			 TSA LP80HT 
+			 400 
+			 SKU-ET80HT-100 
+			   
+		 
+		 
+			 EM 
+			 SD 
+			 SDA 
+			 600 
+			 SKU-ESDA-100 
+			   
+		 
+		 
+			 EM 
+			 DE 
+			 DE 
+			 800 
+			 SKU-BTST-048 
+			   
+		 
+		 
+			 Filtration 
+			 TS 
+			 TSA LP80+Tween 
+			 200 
+			 SKU-BTST-048 
+			   
+		 
+		 
+			 Filtration 
+			 R2 
+			 R2A 
+			 400 
+			 SKU-BR2A-048 
+			   
+		 
+		 
+			 Filtration 
+			 SD 
+			 SDA 
+			 600 
+			 SKU-SDA-048 
+			   
+		 
+		 
+			 Filtration 
+			 TS 
+			 TSA 
+			 800 
+			 SKU-BTSA-048 
+			   
+		 
+	 
+ 
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-Verfication-1430,Test 0041 Media Code SD EM cassette with default exposure time (400 ms),"This test case is to test system sends all commands correctly when it has a large number of EM and Filtration cassettes with multiple exposure settings
+
+Configuration:
+
+Image interval : 4 hour 
+
+Incubation Time: 3 days
+
+ 
+
+
+ 
+	 
+		 
+			 Test Type 
+			 Media Code 
+			 Media Type 
+			 Product SKU 
+			 Comment  
+		 
+		 
+			 EM 
+			 T8 
+			 TSA LP80 
+			 SKU-ET80-100 
+			   
+		 
+		 
+			 EM 
+			 T4 
+			 TSA LP80HT 
+			 SKU-ET80HT-100 
+			   
+		 
+		 
+			 EM 
+			 SD 
+			 SDA 
+			 SKU-ESDA-100 
+			   
+		 
+		 
+			 EM 
+			 DE 
+			 DE 
+			 SKU-BTST-048 
+			   
+		 
+		 
+			 Filtration 
+			 TS 
+			 TSA LP80+Tween 
+			 SKU-BTST-048 
+			   
+		 
+		 
+			 Filtration 
+			 R2 
+			 R2A 
+			 SKU-BR2A-048 
+			   
+		 
+		 
+			 Filtration 
+			 SD 
+			 SDA 
+			 SKU-SDA-048 
+			   
+		 
+		 
+			 Filtration 
+			 TS 
+			 TSA 
+			 SKU-BTSA-048 
+			   
+		 
+	 
+ 
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-Verfication-1434,Test 0043 Media Code SD EM cassette with Custom exposure time (699 ms),"This test case is to test that GrowthDirect system is sending correct exposure time(ms) to vision when Exposure Setting is configured manually (not default)
+
+
+ Configuration:
+
+Image interval : 4 hour 
+
+Incubation Time: 3 days
+
+Print out Sample ID for those cassettes
+
+Configure Exposure setting with the following table
+
+
+
+ 
+
+
+ 
+	 
+		 
+			 Test Type 
+			 Media Code 
+			 Media Type 
+			   Custom   
+
+			Exposure Time(MS) 
+			 Product SKU 
+			 Comment  
+		 
+		 
+			 EM 
+			 T8 
+			 TSA LP80 
+			 255 
+			 SKU-ET80-100 
+			   
+		 
+		 
+			 EM 
+			 T4 
+			 TSA LP80HT 
+			 356 
+			 SKU-ET80HT-100 
+			   
+		 
+		 
+			  EM  
+			  SD  
+			  SDA  
+			  699  
+			  SKU-ESDA-100  
+			   
+		 
+		 
+			 EM 
+			 DE 
+			 DE 
+			 800 
+			 SKU-BTST-048 
+			   
+		 
+		 
+			 EM 
+			 T8 
+			 TSALP80 
+			 155.5 
+			 SKU-ET80-100 
+			 Negative case 
+		 
+		 
+			 Filtration 
+			 TS 
+			 TSA LP80+Tween 
+			 700 
+			 SKU-BTST-048 
+			   
+		 
+		 
+			 Filtration 
+			 R2 
+			 R2A 
+			 500 
+			 SKU-BR2A-048 
+			   
+		 
+		 
+			 Filtration 
+			 SD 
+			 SDA 
+			 605 
+			 SKU-SDA-048 
+			   
+		 
+		 
+			 Filtration 
+			 TS 
+			 TSA 
+			 800 
+			 SKU-BTSA-048 
+			   
+		 
+		 
+			 Filtration 
+			 TS 
+			 TSA LP80+Tween 
+			 400 
+			 SKU-BTST-048 
+			   
+		 
+		 
+			 Filtration 
+			 SD 
+			 SDA 
+			 600.5 
+			 SKU-SDA-048 
+			 Negative case 
+		 
+	 
+ 
+
+  "
+Technical Requirement,GDP-GDSTR-45,Multiple exposure,The System Software shall support a defined image exposure time per supported media and application type,Verification,GDP-Verfication-1438,Test 0044 Media Code SD BB cassette with custom exposure time (605 MS),"This test case is to test GrowthDirect system is sending correct exposure time to vision  when the exposure settings is configured manually. 
+
+Configuration:
+
+Image interval : 4 hour 
+
+Incubation Time: 3 days
+
+ 
+
+
+ 
+	 
+		 
+			 Test Type 
+			 Media Code 
+			 Media Type 
+			   Custom   
+
+			Exposure Time(MS) 
+			 Product SKU 
+			 Comment  
+		 
+		 
+			 EM 
+			 T8 
+			 TSA LP80 
+			 255 
+			 SKU-ET80-100 
+			   
+		 
+		 
+			 EM 
+			 T4 
+			 TSA LP80HT 
+			 356 
+			 SKU-ET80HT-100 
+			   
+		 
+		 
+			  EM  
+			  SD  
+			  SDA  
+			  699  
+			  SKU-ESDA-100  
+			   
+		 
+		 
+			 EM 
+			 DE 
+			 DE 
+			 800 
+			 SKU-BTST-048 
+			   
+		 
+		 
+			 EM 
+			 T8 
+			 TSALP80 
+			 155.5 
+			 SKU-ET80-100 
+			 Negative case 
+		 
+		 
+			 Filtration 
+			 TS 
+			 TSA LP80+Tween 
+			 700 
+			 SKU-BTST-048 
+			   
+		 
+		 
+			 Filtration 
+			 R2 
+			 R2A 
+			 500 
+			 SKU-BR2A-048 
+			   
+		 
+		 
+			  Filtration  
+			  SD  
+			  SDA  
+			  605  
+			  SKU-SDA-048  
+			   
+		 
+		 
+			 Filtration 
+			 TS 
+			 TSA 
+			 800 
+			 SKU-BTSA-048 
+			   
+		 
+		 
+			 Filtration 
+			 TS 
+			 TSA LP80+Tween 
+			 400 
+			 SKU-BTST-048 
+			   
+		 
+		 
+			 Filtration 
+			 SD 
+			 SDA 
+			 600.5 
+			 SKU-SDA-048 
+			 Negative case 
+		 
+	 
+ 
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-46,Email log to multiple addresses,System shall have the ability to send log via email to multiple addresses.,Verification,GDP-Verfication-1749,SRD 1041 Send Logs to multiple email addresses,"Testing requires an instrument or simulator configured with a bridge computer.  
+
+
+  
+
+
+   Bridge computer SMTP setup is required as per     RDT0047 SMTP Server Installation Instructions Rev A  
+
+
+  
+
+
+   Growth Direct configuration for SMTP server.  
+
+
+  
+
+
+   Copy and Email Diagnostic files menu  
+
+
+  
+
+
+      
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-46,Email log to multiple addresses,System shall have the ability to send log via email to multiple addresses.,Verification,GDP-Verfication-1765,SRD 1041 Recipient Email Address Validation,"Testing requires an instrument or simulator configured with a bridge computer.  
+
+
+  
+
+
+   Bridge computer SMTP setup is required as per     RDT0047 SMTP Server Installation Instructions Rev A  
+
+
+  
+
+
+   Growth Direct configuration for SMTP server.  
+
+
+  
+
+
+   Copy and Email Diagnostic files menu  
+
+
+  
+
+
+      
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-46,Email log to multiple addresses,System shall have the ability to send log via email to multiple addresses.,Verification,GDP-Verfication-1787,SRD 1041 Permission for email of logs,"Testing requires an instrument or simulator configured with a bridge computer.  
+
+
+  
+
+
+   Bridge computer SMTP setup is required as per     RDT0047 SMTP Server Installation Instructions Rev A  
+
+
+  
+
+
+   Growth Direct configuration for SMTP server.  
+
+
+  
+
+
+   Copy and Email Diagnostic files menu  
+
+
+  
+
+
+      
+
+
+  
+
+
+  
+
+
+ user with email log disabled.
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-47,Display consistent cassette incubation end time,"In order to avoid confusion, cassette incubation end time shall be displayed the same as on the  Cassette Details page",,,,
+Technical Requirement,GDP-GDSTR-48,Include Serial Number in log email,"System shall include nine digit ""system"" serial number in an email's subject and body when sending log files.",,,,
+Technical Requirement,GDP-GDSTR-49,Multiple record selection display behavior,"The System Software shall display the first report when more than one report item for each report type is selected, and update the display with the current report when printed or saved.",,,,
+Technical Requirement,GDP-GDSTR-50,Warn when deleting default LIMS settings,System shall issue warning when deleting default Method/Action Alert/Handling LIMS settings.,,,,
+Technical Requirement,GDP-GDSTR-51,"Consistent directory selection for ""Copy and Email"" of logs","System shall have consistent directory selection for ""Copy and Email"" log files.",,,,
+Technical Requirement,GDP-GDSTR-52,Worklist Audit Report single sample grammer,"Worklist Audit reports containing a single sample shall display ""1 sample"" instead of ""1 Samples"".",,,,
+Technical Requirement,GDP-GDSTR-53,Consistent Serial Number format,"System shall use serial number format on UI and reports consistent with that on cassette label. Example: Change ""12345678-E"" to ""E12345678"".",,,,
+Technical Requirement,GDP-GDSTR-54,Remove green checks when removing email address,"After removing an email address within the ""User Email Notifications"" page the system shall remove green checks.",,,,
+Technical Requirement,GDP-GDSTR-55,Fix defect to allow saving email address changes on delete,Shall fix defect preventing ability to save the change after deleting an email address in the recipient field.,,,,
+Technical Requirement,GDP-GDSTR-56,"Fix defect to remove prepended ""E"" in Serial Number",Shall fix defect resulting in extra 'E' prepended to serial number.,,,,
+Technical Requirement,GDP-GDSTR-57,Treat temperature readings under 1 degree as invalid,"To prevent false temperature excursion, System shall treat any reading under 1 deg. invalid.",,,,
+Technical Requirement,GDP-GDSTR-58,Log all invalid temperature readings,"To help diagnose incubator issues, all invalid readings shall be logged.",,,,
+Technical Requirement,GDP-GDSTR-59,"Separate LIMS changes within ""User Role"" audit report","Within ""User Role"" audit report, LIMS changes shall be in a separate section.",,,,
+Technical Requirement,GDP-GDSTR-60,"Prevent multiple instances of ""RestoreDB"" from running","Only a single instance of ""RestoreDB"" utility shall be allowed to run.",,,,
+Technical Requirement,GDP-GDSTR-61,Prevent error text from showing through popup,System shall not allow error text (from screen) to show though a popup dialog box.,,,,
+Technical Requirement,GDP-GDSTR-62,Log additional UI exception information,System log additional information for exception that occur within UI.,,,,
+Technical Requirement,GDP-GDSTR-63,Warn when printing to offline printer,System shall detect and warn operator when attempting to print labels to offline printer.,Verification,GDP-Verfication-1654,1103 ESO Printing and Fix for excessive logging due to networked label printer," 
+
+
+ Manual Order Test Screen
+
+
+  
+
+
+  
+
+
+  
+
+
+ Test Panel display
+
+
+  
+
+
+  
+
+
+  
+
+
+ Home Screen Print Display
+
+
+  
+
+
+  
+
+
+  
+
+
+ Log output example
+
+
+  "
+Technical Requirement,GDP-GDSTR-64,"Do not include assemblies in the ""Help About"" dialog","System shall not display assemblies (with version numbers) in the ""Help About"" dialog box",,,,
+Technical Requirement,GDP-GDSTR-65,"Prevent specific characters in Method, Action Alert and Handling Rules","System shall not allow following characters; ^[()*&^%$#@!\[\]]  in Method, Action Alert and Handling Rules.",,,,
+Technical Requirement,GDP-GDSTR-66,"Display ""Failed to process order request""","System shall display ""Failed to process order request"" event in LIMS Tab",,,,
+Technical Requirement,GDP-GDSTR-67,Fix incompatibility from using '^' in LIMS label,Bridge Service shall fix incompatibility resulting from used of ^ in LIMS labels in order to restore ability to print LIMS labels using GrowthDirect 2.3.1.15 and prior versions.,Verification,GDP-Verfication-1655,"Bridge Service test for LIMS compatibility when LIM ID has a ""^"" ","Bridge Service shall fix incompatibility resulting from used of ^ in LIMS labels in order to restore ability to print LIMS labels using GrowthDirect 2.3.1.15 and prior versions. 
+
+
+  
+
+
+ The following tests must be executed before starting the steps below:
+
+
+  
+
+
+  
+
+
+ GDP-Verification-1630 LIMS Setup
+
+
+ GDP-Verification-1631 LIMS Sample ID setup
+
+
+  
+
+
+ LIMS Request file generator
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-68,Allow selection of multiple report items,The System Software shall allow for selection of one or more report items for each report type.,,,,
+Technical Requirement,GDP-GDSTR-69,"Retrieve cassettes while system is in ""Vision"" fatal state","User shall have ability to retrieve cassettes while system is in ""Vision"" fatal state",Verification,GDP-Verfication-1658,1064 Overview Cassette Removal while in error state,"System is not continuing imaging on Vision errors (when continue to image on error option is on) (CS 9191) 
+
+
+  
+
+
+ The test requires at lease 1 non-error cassette
+
+
+  
+
+
+ Preconditions:
+
+
+    test case GDP-Verfication-1631 must be run first.   
+
+
+  
+
+
+    Operations   
+
+
+    Access to the vision server is required for this test.   
+
+
+  "
+Technical Requirement,GDP-GDSTR-69,"Retrieve cassettes while system is in ""Vision"" fatal state","User shall have ability to retrieve cassettes while system is in ""Vision"" fatal state",Verification,GDP-Verfication-1659,1064 Cassette Removal while in error state test,"System is not continuing imaging on Vision errors (when continue to image on error option is on) (CS 9191) 
+
+
+  
+
+
+ The test requires at lease 1 non-error cassette
+
+
+  
+
+
+ Preconditions:
+
+
+    test case GDP-Verfication-1631 must be run first.   
+
+
+  
+
+
+    Operations   
+
+
+    Access to the vision server is required for this test.   
+
+
+  
+
+
+   Technician Manual Test Screen:  
+
+
+      
+
+
+  
+
+
+ Growth Direct Vision Error"
+Technical Requirement,GDP-GDSTR-69,"Retrieve cassettes while system is in ""Vision"" fatal state","User shall have ability to retrieve cassettes while system is in ""Vision"" fatal state",Verification,GDP-Verfication-1660,1102 Setup Cassette continue processing on error,"System is not continuing imaging on Vision errors (when continue to image on error option is on) (CS 9191) 
+
+
+  
+
+
+ Setup screen:
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-70,"Fix defect with disabled LIMS settings ""Save"" button","Shall fix defect resulting in LIMS settings' ""Save"" button becoming disabled.",,,,
+Technical Requirement,GDP-GDSTR-71,"Auto-populate LIMS comments into ""Test"" comment field","System shall auto-populate LIMS comments into ""Test"" comment field on ""Test Report"" and ""Approve page"".",,,,
+Technical Requirement,GDP-GDSTR-72,Fix incompatibility in FC_START_MONITOR parameter list,Shall fix incompatibility between GrowthDirect 2.3.0.269 and latest Bridge Computer's FC_START_MONITOR parameter list,,,,
+Technical Requirement,GDP-GDSTR-73,Ignore any incubator reading below 1 degree C.,Shall prevent erroneous incubator reading by ignoring any readings below 1 degree C.,,,,
+Technical Requirement,GDP-GDSTR-74,Consider part-present sensor value only if gripper closed,System shall consider gripper (IOQ/IMP) part-present sensor value only if gripper is closed. This change prevent IOQ movement resulting from system attempting to identify a cassette after tripping part-present sensor.,,,,
+Technical Requirement,GDP-GDSTR-75,Archive all qualified records,Shall fix default resulting in not all qualified records are being archived,,,,
+Technical Requirement,GDP-GDSTR-76,"Fix defect resulting in duplicate data within ""Test"" reports","Shall fix defect resulting in duplicated data within ""Test"" reports.",,,,
+Technical Requirement,GDP-GDSTR-77,Fix defect which allows incorrect Sterilitiy cassette records to be selected,"Shall fix defect in report where incorrect Sterility cassette records may be selected. Note, this defect is due to a false assumption that cassettes records are sequential, however that is only correct when three sterility cassettes are loaded in ""ABC"" order.",,,,
+Technical Requirement,GDP-GDSTR-78,Test if door is unlocked prior to attempting to open,"In order to prevent false ""Contact Service"" warnings, system shall test if door is unlocked prior to attempting to open it.",,,,
+Technical Requirement,GDP-GDSTR-79,Email on fatal condition and when cleared,System shall send email on fatal condition and a second email after fatal condition is cleared,,,,
+Technical Requirement,GDP-GDSTR-80,Cancel test on specific vision errors,"System shall cancel test on the following vision errors; -5900, -5901, -5903, -5904, -5905",Verification,GDP-Verfication-1646,Overview 1075 Cancel tests on vision errors,"Cancel tests on vision errors 5900, 5901, 5903, 5904, 5905
+
+
+  
+
+
+ Provide missing error handling for the following Vision analysis errors; -5900,-5901,-5903,-5904,-5905
+
+
+  
+
+
+         CommandFormatError (-5900)
+
+        UnknownCommand (-5901)
+
+        CommandAborted  (-5903)
+
+        PlateIndexError (-5904)
+
+        NewPlateIndexError (-5905)
+
+
+ NOTE: -5902  is currently not defined.
+
+
+  
+
+
+ For the above analysis errors the system shall log error and cancel plate. NOTE: This behavior may be updated in future to recover plate. "
+Technical Requirement,GDP-GDSTR-80,Cancel test on specific vision errors,"System shall cancel test on the following vision errors; -5900, -5901, -5903, -5904, -5905",Verification,GDP-Verfication-1647,1075 Test Cancel tests on vision error 5900,"Cancel tests on vision errors 5900, 5901, 5903, 5904, 5905
+
+
+  
+
+
+ Provide missing error handling for the  Vision analysis errors CommandFormatError (-5900)
+
+
+  
+
+
+ Error Configuration
+
+      
+
+
+  
+
+
+  
+
+
+ Log Verification
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-80,Cancel test on specific vision errors,"System shall cancel test on the following vision errors; -5900, -5901, -5903, -5904, -5905",Verification,GDP-Verfication-1648,1075 Test Cancel tests on vision error 5901,"Provide missing error handling for the Vision analysis errors UnknownCommand (-5901)
+
+
+  
+
+
+ Error Configuration
+
+
+  
+
+
+  
+
+      
+
+
+  
+
+
+  
+
+
+ Log Verification
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-80,Cancel test on specific vision errors,"System shall cancel test on the following vision errors; -5900, -5901, -5903, -5904, -5905",Verification,GDP-Verfication-1649,1075 Test Cancel tests on vision error 5903,"Provide missing error handling for the Vision analysis errors CommandAborted (-5903)
+
+
+  
+
+
+ Error Configuration
+
+
+       
+
+
+  
+
+
+ Log Verification
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-80,Cancel test on specific vision errors,"System shall cancel test on the following vision errors; -5900, -5901, -5903, -5904, -5905",Verification,GDP-Verfication-1650,1075 Test Cancel tests on vision error 5904,"Provide missing error handling for the Vision analysis errors PlateIndexError (-5904)
+
+
+  
+
+
+ Error Configuration
+
+
+       
+
+
+  
+
+
+ Log Verification
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-80,Cancel test on specific vision errors,"System shall cancel test on the following vision errors; -5900, -5901, -5903, -5904, -5905",Verification,GDP-Verfication-1651,1075 Test Cancel tests on vision error 5905,"Provide missing error handling for the Vision analysis errors PlateIndexError (-5904)
+
+
+  
+
+
+ Error Configuration
+
+
+  
+
+
+      
+
+
+  
+
+
+ Log Verification
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-81,Fix defect when date is manually changed to prior than current date,Shall fix defect that stop ability to load cassettes when date is manually changed to be prior to current date,,,,
+Technical Requirement,GDP-GDSTR-82,Fix defect preventing 12 character Lot/Batch entry,"Shall fix ""Print Worklist"" defect preventing 12 character Lot/Batch entry.",,,,
+Technical Requirement,GDP-GDSTR-83,Increase Serial Incubation limit,Shall improve the current estimated 113 cassettes Serial Incubation limit to 165 cassettes. (Achieved via turning off reserving slots).,,,,
+Technical Requirement,GDP-GDSTR-84,Transfer files to Bridge Computer via socket connection,"To avoid issues managing network permissions (user, shared drive), files shall be transferred to Bridge Computer via socket connection.  System shall warn customer when Bridge Computer can't move files (database backups, LIMS results) to the customer network location",,,,
+Technical Requirement,GDP-GDSTR-85,"Rename ""Reserve"" slots to ""System"" slots","Shall rename ""Reserve"" slots to ""System"" slots. Reason for change",,,,
+Technical Requirement,GDP-GDSTR-87,Fix defect with barcode causing repeated imager identification of previously unloaded cassettes,Shall fix defect resulting from embedded Cassette ID (Sample ID & LIMS) barcode that results in previously unloaded cassette to be repeatedly brought to Imager for identification.,,,,
+Technical Requirement,GDP-GDSTR-88,Prevent System Archive failure from violation of primary key constraint 'PKcassette',System Archive shall not fail due to exception violation of primary key constraint 'PKcassette' because it cannot insert duplicate key,,,,
+Technical Requirement,GDP-GDSTR-89,LIMS can request previous LIMS results by LIMS ID,LIMS system shall have ability to request previous LIMS results using an LIMS ID.,,,,
+Technical Requirement,GDP-GDSTR-90,Remove all leading and trailing System SN whitespace,"In order to prevent errors entering System SN, system shall remove all leading/trailing whitespace characters.",,,,
+Technical Requirement,GDP-GDSTR-91,Remove all leading and trailing Asset Tag whitespace,"In order to prevent errors entering Asset Tag, system shall remove all leading/trailing whitespace characters.",,,,
+Technical Requirement,GDP-GDSTR-92,Enter distance scan range with equal start and end dates,"While performing a ""Manually Calibration"", shall have the ability to enter distance scan range (where start equals end) that results in only a single distance scan being performed.",,,,
+Technical Requirement,GDP-GDSTR-93,"Fix defect with ""Database Update Script""","Shall correct ""Database Update Script"" defect that result in 'NULL' values within the ""UserRole"" record.",,,,
+Technical Requirement,GDP-GDSTR-94,"Attempt second contact with Vision Server before entering ""Vision Fatal"" state","To avoid false reported ""Vision Fatal"", system shall attempt second attempt to contact Vision Server before changing to ""Vision Fatal"" state.",Verification,GDP-Verfication-1652,Overview 1089 Cancel tests on vision errors,"To avoid false reported “Vision Fatal”, shall attempt second attempt to contact Vision Server before changing to “Vision Fatal” state (See CS 9229, 9230)"
+Technical Requirement,GDP-GDSTR-94,"Attempt second contact with Vision Server before entering ""Vision Fatal"" state","To avoid false reported ""Vision Fatal"", system shall attempt second attempt to contact Vision Server before changing to ""Vision Fatal"" state.",Verification,GDP-Verfication-1653,1089 Test two attempts to contact Vision Server before changing to “Vision Fatal” state ,"To avoid false reported “Vision Fatal”, shall attempt second attempt to contact Vision Server before changing to “Vision Fatal” state (See CS 9229, 9230)
+
+
+  
+
+
+ Manual Order Test Screen
+
+
+  
+
+
+  
+
+
+  
+
+
+ Test Panel display
+
+
+  
+
+
+  
+
+
+  
+
+
+ GD Simulator Screen with the Vision Server Stopped
+
+
+  
+
+
+  
+
+
+  
+
+
+ Log messages for verification
+
+
+  
+
+
+  
+
+
+ Logs "
+Technical Requirement,GDP-GDSTR-95,Prevent duplicate barcode label being printed,Shall corrected extra duplicate barcode label is printed. (Results in a duplicate Sample ID error while loading cassettes due to extra label being applied to a cassette.,,,,
+Technical Requirement,GDP-GDSTR-96,Ensure connection to Bridge Computer is not present before connecting,Shall add code to ensure that any previous connection to Bridge Computer shall be disconnected before establishing new connection.,Verification,GDP-Verfication-1552,Overview,Bridge Computer connection stability
+Technical Requirement,GDP-GDSTR-96,Ensure connection to Bridge Computer is not present before connecting,Shall add code to ensure that any previous connection to Bridge Computer shall be disconnected before establishing new connection.,Verification,GDP-Verfication-1495,Test network connection between Bridge and GrowthDirect connection,"This test case is to test that Bridge and GrowthDirect always have a single connection 
+
+
+  
+
+
+  Setup and Configuration steps: 
+
+
+ 1. Bridge and GrowthDirect system server are connected with cross over network cable (yellow cable)
+
+
+ 2. GrowthDirect System server, in General Settings, Bridge computer is checked
+
+
+ 3. Home page, System Status has GreenCheck
+
+
+ 4. Print out a few Barcode labels  "
+Technical Requirement,GDP-GDSTR-96,Ensure connection to Bridge Computer is not present before connecting,Shall add code to ensure that any previous connection to Bridge Computer shall be disconnected before establishing new connection.,Verification,GDP-Verfication-1496,Test Bridge connection Loss and re-connection after 30 mins,"This test case is to test that connection loss and re connection between Bridge and GrowthDirect after 30 mins
+
+
+  
+
+
+  Setup and Configuration Steps: 
+
+
+ 1. Bridge and GrowthDirect system server are connected with cross over network cable (yellow cable)
+
+
+ 2. GrowthDirect System server, in General Settings, Bridge computer is checked
+
+
+ 3. Home page, System Status has GreenCheck
+
+
+ 4. Print out a few Barcode labels  
+
+
+  "
+Technical Requirement,GDP-GDSTR-96,Ensure connection to Bridge Computer is not present before connecting,Shall add code to ensure that any previous connection to Bridge Computer shall be disconnected before establishing new connection.,Verification,GDP-Verfication-1497,Test Bridge multiple connection Loss and re-connections ,"This test case is to test that Bridge multiple connection loss and re connections 
+
+
+  
+
+
+ Setup and Configuration steps:
+
+
+ 1. Bridge and GrowthDirect system server are connected with cross over network cable (yellow cable)
+
+
+ 2. GrowthDirect System server, in General Settings, Bridge computer is checked
+
+
+ 3. Home page, System Status has GreenCheck
+
+
+ 4. Print out a few Barcode labels  "
+Technical Requirement,GDP-GDSTR-96,Ensure connection to Bridge Computer is not present before connecting,Shall add code to ensure that any previous connection to Bridge Computer shall be disconnected before establishing new connection.,Verification,GDP-Verfication-1645,1091 Test for TCP socket connection usage,"Previous connection to Bridge Computer shall be disconnected before establishing new connection.   
+
+
+  
+
+
+  Notes: 
+
+
+  
+
+
+   1. This test requires access to the command prompt on the growth direct.  
+
+
+   2. The command netstart will be used to display the tcp connections  
+
+
+  
+
+
+  
+
+
+ Technicians Page
+
+
+  
+
+
+  
+
+
+   Example netstat command with bridge computer connection highlighted  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-98,View test results by LIMS ID,Shall add ability to view test results by LIMS ID.,,,,
+Technical Requirement,GDP-GDSTR-99,View test results by cassette Serial Number,Shall add ability to view test results by cassette Serial Number.,,,,
+Technical Requirement,GDP-GDSTR-100,"Remove -6175 as a ""Contact Service"" warning","System shall not report -6175 as a ""Contact Service"" warning.",,,,
+Technical Requirement,GDP-GDSTR-102,Increase Business Loop log warning interval,"In order to avoid false log errors, The Business Loop log interval warning interval shall be increased to 10 seconds.",,,,
+Technical Requirement,GDP-GDSTR-103,Remove false exceptions by entering Log Viewer Tool,"Remove false exception log errors, caused by entering Log Viewer Tool.",,,,
+Technical Requirement,GDP-GDSTR-104,Validate user date range input,"When searching for Audit reports, System shall correctly validate user date range input.",,,,
+Technical Requirement,GDP-GDSTR-105,"Improve performance of UI in ""General Settings""","Shall correct issue where UI appears sluggish in ""General Settings"" due to system testing for local printers",,,,
+Technical Requirement,GDP-GDSTR-107,Fix defect to continue to image on Vision errors when option selected,System is not continuing imaging on Vision errors (when continue to image on error option is on),Verification,GDP-Verfication-1660,1102 Setup Cassette continue processing on error,"System is not continuing imaging on Vision errors (when continue to image on error option is on) (CS 9191) 
+
+
+  
+
+
+ Setup screen:
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-107,Fix defect to continue to image on Vision errors when option selected,System is not continuing imaging on Vision errors (when continue to image on error option is on),Verification,GDP-Verfication-1663,1102 Cassette continue processing cassette on error when set,"System is not continuing imaging on Vision errors (when continue to image on error option is on) (CS 9191) 
+
+
+  
+
+
+ The test requires at lease 1 non-error cassette
+
+
+  
+
+
+ Preconditions:
+
+
+    test cases GDP-Verfication-1631  and GDP-Verfication-1660 must be run first.   
+
+
+  
+
+
+  
+
+
+   Technician Manual Test Screen:  
+
+
+      
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-107,Fix defect to continue to image on Vision errors when option selected,System is not continuing imaging on Vision errors (when continue to image on error option is on),Verification,GDP-Verfication-1664,1102 Overview Continue to process cassettes with a vision error when set,"System is not continuing imaging on Vision errors (when continue to image on error option is on) (CS 9191) 
+
+
+  
+
+
+ Preconditions:
+
+
+    test case GDP-Verfication-1631 must be run first.   
+
+
+  
+
+
+ The test requires at lease 1 error cassette   that will always fail.  
+
+
+  
+
+
+   Suggest test cassette, empty EV cassette with sticky note places such as a few of the red dots are covered.  
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-108,Fix defect preventing printing to EOS1 printer,Shall fix issue preventing printing to EOS1 printer via USB.,Verification,GDP-Verfication-1571,Test adding USB Barcode printer,"This test case is to test adding USB Cab EOS1/300 Printer driver
+
+
+  
+
+
+  
+
+
+ Setup and Configuration Steps:
+
+
+ On Bridge computer
+
+
+ 1. Install USB Cab EOS1/300 Printer driver
+
+
+ 2. Connect USB USB Cab EOS1/300 Printer driver to bridge with USB cable (do not connect Network cable) 
+
+
+ 3. Verify that USB Cab EOS1/300 Printer driver is working"
+Technical Requirement,GDP-GDSTR-108,Fix defect preventing printing to EOS1 printer,Shall fix issue preventing printing to EOS1 printer via USB.,Verification,GDP-Verfication-1572,Test printing 20 Sample labels to USB Barcode printer ,"This test case is to test adding USB Cab EOS1/300 Printer driver
+
+
+  
+
+
+ Setup and Configuration Steps:
+
+
+ On Bridge:
+
+
+ On Bridge computer
+
+
+ 1. Install USB Cab EOS1/300 Printer driver
+
+
+ 2. Connect USB USB Cab EOS1/300 Printer driver to bridge with USB cable (do not connect Network cable) 
+
+
+ 3. Verify that USB Cab EOS1/300 Printer driver is working
+
+
+  
+
+
+ On GrowthDirect System
+
+
+ 1. Create method name it M1, Action/Aler name it as A1t, Handling Rule name it as H1, SampleID name it as S1
+
+2. Create a WorkList with M1, A1, and H1. then name it as ""Worklist Test""
+
+
+  "
+Technical Requirement,GDP-GDSTR-108,Fix defect preventing printing to EOS1 printer,Shall fix issue preventing printing to EOS1 printer via USB.,Verification,GDP-Verfication-1573,Test printing 20 LIMS labels to USB Barcode printer,"This test case is to test printing to USB Barcode printer
+
+
+  
+
+
+  
+
+
+ Setup and configuration steps:
+
+
+ On Bridge:
+
+
+ On Bridge computer
+
+
+ 1. Install USB Cab EOS1/300 Printer driver
+
+
+ 2. Connect USB USB Cab EOS1/300 Printer driver to bridge with USB cable (do not connect Network cable) 
+
+
+ 3. Verify that USB Cab EOS1/300 Printer driver is working
+
+
+  
+
+
+ On GrowthDirect System
+
+
+ 1. Create method name it M1, Action/Aler name it as A1t, Handling Rule name it as H1, SampleID name it as S1
+
+2. Create a WorkList with M1, A1, and H1. then name it as ""Worklist Test"""
+Technical Requirement,GDP-GDSTR-108,Fix defect preventing printing to EOS1 printer,Shall fix issue preventing printing to EOS1 printer via USB.,Verification,GDP-Verfication-1574,Test adding multiple Network EOS1/300 Network printers,"This test case is to test adding multiple printers
+
+
+  
+
+
+  
+
+
+ Setup and Configuration steps:
+
+
+ On Bridge
+
+
+ 1. Identify and locate three  EOS1/300 Network printers; Printer 1: 10.0.0.85, Printer 2: 10.0.0.90, Printer 3: 10.0.0.219, Printer 4: 10.0.0.221
+
+
+ 2. All above Cab EOS1/300 Barcode Printers are connected to Corporate Network
+
+3. You can ping all EOS1/300 Barcode printer from GrowthDirect System server
+
+
+  
+
+
+ The following screenshot is for reference"
+Technical Requirement,GDP-GDSTR-109,"Fix defect when acknowledging mulitiple ""System Errors""","Shall fix defect that results in exception and crash when acknowledging multiples: ""System Errors""",,,,
+Technical Requirement,GDP-GDSTR-110,Fix defect when saving blank printer name,Shall fix defect that results in crash when saving with blank printer name.,,,,
+Technical Requirement,GDP-GDSTR-111,Display correct security messages for Send Systems Logs role,"Shall update the ""Copy and Email"" dialog box displays to display the correct security messages for the Send System Logs role.",,,,
+Technical Requirement,GDP-GDSTR-113,Provide option to cancel printing LIMS labels,System shall provide option to cancel printing LIMS labels,,,,
+Technical Requirement,GDP-GDSTR-114,Fix defect preventing users without Admin rights to email system logs,Shall correct defect that prevents user without Administration privileges emailing system logs.,,,,
+Technical Requirement,GDP-GDSTR-115,Provide additional exception stack information on crash,System shall provide additional exception stack information for diagnosing crashes.,,,,
+Technical Requirement,GDP-GDSTR-116,"Issue Precise ""Status"" request and log response prior to issuging HOME","To help hardware diagnostics, System shall issue Precise ""Status"" request and log the response prior to issuing HOME commands.",,,,
+Technical Requirement,GDP-GDSTR-117,Copy archive files to Bridge Computer on demand and as scheduled,"With Bridge Computer enabled, System shall correctly copy Archive files to Bridge Computer during both normal scheduled archives and when ""Archive Now"" button is pressed.",,,,
+Technical Requirement,GDP-GDSTR-118,"View ""Cassette Details"" page when double clicking a cassette from ""Home"" page","User shall have the ability to directly go to ""Cassette Details"" page by double clicking on a cassette from ""Home"" page.",,,,
+Technical Requirement,GDP-GDSTR-122,Move log files from Vision Server to the RMS Agent upload directory,"GrowthDirect System shall move log files from Vision Server to the RMS Agent upload directory (""C:\\RemoteAgent\\Uploads"")",Verification,GDP-Verfication-1665,SRD 7000 Overview GrowthDirect move log files from Vision Server to the RMS Agent upload directory,"GrowthDirect System shall move log files from Vision Server to the RMS Agent upload directory (""C:\\RemoteAgent\\Uploads"")
+
+
+  
+
+
+ Preconditions:
+
+
+   RMS Agent is configured and operational  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-122,Move log files from Vision Server to the RMS Agent upload directory,"GrowthDirect System shall move log files from Vision Server to the RMS Agent upload directory (""C:\\RemoteAgent\\Uploads"")",Verification,GDP-Verfication-1666,SRD 7000 Confirm Setup of RMS,"GrowthDirect System shall move log files from Vision Server to the RMS Agent upload directory (""C:\\RemoteAgent\\Uploads"")
+
+
+  
+
+
+ RMS Setup screen:
+
+
+  
+
+
+        
+
+
+ RMS comfig file location
+
+
+        
+
+
+ RMS settings of interest
+
+
+        
+
+
+  
+
+
+ RMS remote location:
+
+
+        
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-122,Move log files from Vision Server to the RMS Agent upload directory,"GrowthDirect System shall move log files from Vision Server to the RMS Agent upload directory (""C:\\RemoteAgent\\Uploads"")",Verification,GDP-Verfication-1667,SRD 7000 Vision Server to the RMS Agent upload directory Operation,"GrowthDirect System shall move log files from Vision Server to the RMS Agent upload directory (""C:\\RemoteAgent\\Uploads"")
+
+
+  
+
+
+ Precondition:
+
+
+  GDP-Verfication-1666  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-123,Fix defect causing violation of primary key constraint 'PK Users' on archive,Shall correct issue that results Violation of PRIMARY KEY constraint 'PK_Users' when archiving,,,,
+Technical Requirement,GDP-GDSTR-101,"Technician access to SMTP ""Test Page""","Technician shall have ability to access SMTP ""Test Page"" functionality.",Verification,GDP-Verfication-1633,1096 Overview,Technician to have ability to access SMTP “Test Page” functionality for the technician page.
+Technical Requirement,GDP-GDSTR-101,"Technician access to SMTP ""Test Page""","Technician shall have ability to access SMTP ""Test Page"" functionality.",Verification,GDP-Verfication-1636,SRD 1096 SMTP Server Test screen,"Testing requires an instrument or simulator configured with a bridge computer.  
+
+
+  
+
+
+   Bridge computer SMTP setup is required as per     RDT0047 SMTP Server Installation Instructions Rev A  
+
+
+  
+
+
+   Growth Direct configuration for SMTP server.  
+
+
+  
+
+
+      
+
+
+  
+
+
+  
+
+
+ Technician Page
+
+
+  
+
+
+  
+
+
+ Create Email tab
+
+
+  
+
+
+  
+
+
+ Send Email tab
+
+
+    
+
+
+  "
+Technical Requirement,GDP-GDSTR-101,"Technician access to SMTP ""Test Page""","Technician shall have ability to access SMTP ""Test Page"" functionality.",Verification,GDP-Verfication-1637, SRD 1096 SMTP Server Test operation,"Testing requires an instrument or simulator configured with a bridge computer.  
+
+
+  
+
+
+   Bridge computer SMTP setup is required as per     RDT0047 SMTP Server Installation Instructions Rev A  
+
+
+  
+
+
+   Growth Direct configuration for SMTP server.  
+
+
+  
+
+
+      
+
+
+  
+
+
+  
+
+
+ Technician Page
+
+
+  
+
+
+  
+
+
+ Create Email tab
+
+
+  
+
+
+  
+
+
+ Send Email tab
+
+
+    
+
+
+  
+
+
+ Send tab"
+Technical Requirement,GDP-GDSTR-124,Fix defect with LIMS label ID causing repeated imager identification,Shall correct situation where a cassette with embedded ID within LIMS labels is repeatedly returned to Imager for identification. ,,,,
+Technical Requirement,GDP-GDSTR-125,Vision parameters Record-Recall,"The System shall have provisions to record and recall vision parameters of 4 different cassette types for Calibration, Environmental, Filtration, and Sterility on the Vision Calibration Page.",Technical Requirement,GDP-GDSTR-19,Improved vision calibration workflow,System shall have improved camera vision calibration/setup screen
+Technical Requirement,GDP-GDSTR-126,Vision Cal Image store,The 3 images from the Vision Calibration shall be captured and stored on the vision server for future reference.,Technical Requirement,GDP-GDSTR-19,Improved vision calibration workflow,System shall have improved camera vision calibration/setup screen
+Technical Requirement,GDP-GDSTR-127,Vision Cal Verify,"Pressing ""Verify"" on the Vision Calibration Page shall simulate an image cycle during routine use, including (but not limited to) scanning the cassette at distance scan height, moving to the focal point (minus scan delta), and acquiring the 3 z-positions.",Technical Requirement,GDP-GDSTR-19,Improved vision calibration workflow,System shall have improved camera vision calibration/setup screen
+Folder,GDP-FLD-121,Bridge Computer,,,,,
+Technical Requirement,GDP-GDSTR-119,Bridge Computer assumes all printing functionality,Bridge Computer shall assume all printing (reports/barcode) functionality from GrowthDirect System.,,,,
+Technical Requirement,GDP-GDSTR-120,Bridge Computer to pass e-mails to Customer's SMTP server ,Bridge Computer shall have ability to pass email from GrowthDirect System directly to Customer's SMTP server (instead of  Bridge Computer SMTP server),,,,
+Technical Requirement,GDP-GDSTR-121,Bridge Computer tests customer network locations for loss of connectivity,"Bridge Computer shall actively test customer network locations for loss of connectivity.  Locations to test; database backup path, LIMS paths",Verification,GDP-Verfication-1624,SRD 6002 Overview," Bridge Computer to actively test customer network locations for loss of connectivity.    
+
+
+			  
+
+
+			    Locations to test   
+
+
+			    a)  database backup path   
+
+
+			    b)  LIMS data share paths"
+Technical Requirement,GDP-GDSTR-121,Bridge Computer tests customer network locations for loss of connectivity,"Bridge Computer shall actively test customer network locations for loss of connectivity.  Locations to test; database backup path, LIMS paths",Verification,GDP-Verfication-1625,Network share setup,"Preconfiguration Bridge Computer and corporate network
+
+
+ 
+
+SRD0022 Ref 6002 Network setup Bridge and Corporate network
+
+
+  
+
+
+ 1. Identify the test user for the corporate side test
+
+2. On corporate side of Bridge configure 2 shares
+
+    a. Read/Write to the test user in step 1
+
+    b. Read Only to the test user in step 1
+
+3. In the Read Only share from step 2 (add the file using a user other than the user from step 1)
+
+
+  
+
+
+ Growth Direct 
+
+
+ In general setting enable the bridge computer and Save the setting. If the error ""Failed to connect to the Bridge Computer. Please check the network cable and confirm if the Bridge computer is started."" is shown double check the wiring of the bridge computer to the Growth Direct. See WI0118.
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+ 
+
+ "
+Technical Requirement,GDP-GDSTR-121,Bridge Computer tests customer network locations for loss of connectivity,"Bridge Computer shall actively test customer network locations for loss of connectivity.  Locations to test; database backup path, LIMS paths",Verification,GDP-Verfication-1626,GD archive database setup,"Preconfiguration Growth Direct DB archive to corporate network test
+
+
+  
+
+
+  DO NOT RUN THIS ON AN INSTRUMENT  
+
+
+  THIS IS A SIMULATOR TEST ONLY. 
+
+
+ 
+
+SRD0022 Ref 6002 Archive Database setup
+
+
+  
+
+
+ 1. Use unit 33's database \\\10.0.0.48\sqa\2018_SW_Projects\2.3.3_GD_System\VVR\PRD\SRD_1004_TFS_3585 FR Reports need be run against an Archive Database\Test Data\Databases for testing
+
+2. Use simulator and Unit 33's database
+
+3. Delete current GrowthDirect and Archive Database
+
+4.  Unplug network cable from your simulator machine so system will not send out notification email for this simulator. 
+
+5. Restore Unit33's database
+
+6. Launch GrowthDirect, open user role, modify operator (add more role for example) and save it
+
+
+ 7. Remove the System Email Recipient from the IT Setting on the Growth Direct and save it.
+
+
+ 8. Restore the network cable unplugged in step 4."
+Technical Requirement,GDP-GDSTR-121,Bridge Computer tests customer network locations for loss of connectivity,"Bridge Computer shall actively test customer network locations for loss of connectivity.  Locations to test; database backup path, LIMS paths",Verification,GDP-Verfication-1627,Network share DB backup to corporate server,"Positive test case for SRD 0022 Item 6002. This tests demonstrates that the feature is working when the network is functional.
+
+
+  
+
+
+ The following tests must be executed before starting the steps below:
+
+
+ GDP-Verification-1625 Network share setup - this sets up the network
+
+
+ GDP-Verification-1626 GD archive database setup - this created an archive database for testing
+
+
+  
+
+
+ IT Settings Database Backup settings
+
+
+  
+
+
+  
+
+
+  
+
+
+ IT Network Credentials:
+
+
+  
+
+
+  
+
+
+  
+
+
+ IT Log File Settings
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-121,Bridge Computer tests customer network locations for loss of connectivity,"Bridge Computer shall actively test customer network locations for loss of connectivity.  Locations to test; database backup path, LIMS paths",Verification,GDP-Verfication-1628,Network share DB backup to corporate server - Network down,"Negative test case for SRD 0022 Item 6002. This tests demonstrates that the feature is working when the network is interupted then restored.
+
+
+  
+
+
+ The following tests must be executed before starting the steps below:
+
+
+ GDP-Verification-1625 Network share setup - this sets up the network
+
+
+ GDP-Verification-1626 GD archive database setup - this created an archive database for testing
+
+
+  
+
+
+ IT Settings Database Backup settings
+
+
+  
+
+
+  
+
+
+  
+
+
+ IT Network Credentials:
+
+
+  
+
+
+  
+
+
+  
+
+
+ IT Log File Settings
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-121,Bridge Computer tests customer network locations for loss of connectivity,"Bridge Computer shall actively test customer network locations for loss of connectivity.  Locations to test; database backup path, LIMS paths",Verification,GDP-Verfication-1629,Network share DB backup to corporate server - share marked read-only,"Negative test case for SRD 0022 Item 6002. This tests demonstrates that the feature handles errors writing to the network share.
+
+
+  
+
+
+ The following tests must be executed before starting the steps below:
+
+
+ GDP-Verification-1625 Network share setup - this sets up the network
+
+
+ GDP-Verification-1626 GD archive database setup - this created an archive database for testing
+
+
+  
+
+
+ IT Settings Database Backup settings
+
+
+  
+
+
+  
+
+
+  
+
+
+ IT Network Credentials:
+
+
+  
+
+
+  
+
+
+  
+
+
+ IT Log File Settings
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-121,Bridge Computer tests customer network locations for loss of connectivity,"Bridge Computer shall actively test customer network locations for loss of connectivity.  Locations to test; database backup path, LIMS paths",Verification,GDP-Verfication-1630,LIMS Setup,"Preconfiguration LIMS shares on corporate network and configure LIMS in Growth Direct
+
+
+ 
+
+SRD0022 Ref 6002 Corporate network LIMS setup and 
+
+
+  
+
+
+ 1. Identify the test user for the corporate side test
+
+2. On corporate side of Bridge configure 3 shares for LIMS, these will mirror the setup on the bridge computer these shares must be set read/write to everyone and the root directory LIMS must be shared.
+
+    a. \\{server}\{server path}\LIMS\Receipts
+
+    b. \\{server}\{server path}\LIMS\Requests
+
+
+     c.\\{server}\{server path}\ LIMS\Results
+
+
+  
+
+
+ Growth Direct LIMS setup
+
+
+ 1. LIMS must be turned on for this test. See WI0066 for instructions on how to turn on LIMS.
+
+
+ 2. Select LIMS from the main menu
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+ 3. From the LIMS menu select LIMS result file
+
+
+  
+
+
+  
+
+
+  
+
+
+ 4. In the Select the LIMS test results fields to Export select the Check option to select everything then Save the setting.
+
+
+  
+
+
+  
+
+ 
+
+
+ 5. Update the LIMS settings with all options selected, network location and domain user to access the shares then select update and save the settings
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-121,Bridge Computer tests customer network locations for loss of connectivity,"Bridge Computer shall actively test customer network locations for loss of connectivity.  Locations to test; database backup path, LIMS paths",Verification,GDP-Verfication-1631,LIMS Sample ID setup,"Configuration LIMS Sample ID setup
+
+
+  
+
+
+ 1. Create a Method 
+
+
+  
+
+
+  
+
+
+ 2. Configure an Action Alert Level
+
+
+  
+
+
+  
+
+
+ 
+
+3. Configure a Handling Rule
+
+
+  
+
+
+ 4. Configure Samples
+
+
+  5. Configure the Work List
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-121,Bridge Computer tests customer network locations for loss of connectivity,"Bridge Computer shall actively test customer network locations for loss of connectivity.  Locations to test; database backup path, LIMS paths",Verification,GDP-Verfication-1632,Network share LIMS Operation to corporate server,"Positive test case for SRD 0022 Item 6002. This tests demonstrates that the feature is working when the network is functional.
+
+
+  
+
+
+ The following tests must be executed before starting the steps below:
+
+
+  
+
+
+  
+
+
+ GDP-Verification-1630 LIMS Setup
+
+
+ GDP-Verification-1631 LIMS Sample ID setup
+
+
+  
+
+
+ LIMS Request file generator
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-121,Bridge Computer tests customer network locations for loss of connectivity,"Bridge Computer shall actively test customer network locations for loss of connectivity.  Locations to test; database backup path, LIMS paths",Verification,GDP-Verfication-1638,Network share LIMS Operation to corporate server Network Down,"Positive test case for SRD 0022 Item 6002. This tests demonstrates that the feature is working when the network is functional.
+
+
+  
+
+
+ The following tests must be executed before starting the steps below:
+
+
+  
+
+
+  
+
+
+ GDP-Verification-1630 LIMS Setup
+
+
+ GDP-Verification-1631 LIMS Sample ID setup
+
+
+  
+
+
+ LIMS Request file generator
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-112,Bridge Computer logs exceptions due to incoming message,Bridge Computer shall log any exceptions due to processing incoming GrowthDirect message.,,,,
+Folder,GDP-FLD-122,RMS,,,,,
+Technical Requirement,GDP-GDSTR-21,RMS dashboard agent ID,The RMS dashboard Audit Trail shall contain an ID identifying agent making changes.,,,,
+Technical Requirement,GDP-GDSTR-128,Display Interim Counts,The System Software shall display Interim Count data while a cassette is actively being processed.,,,,
+Technical Requirement,GDP-GDSTR-129,Display Completed Counts,The System Software shall display Completed Count data when a cassette processing has completed.,,,,
+Technical Requirement,GDP-GDSTR-130,Unlock designated carousel door,"The System Software shall unlock a designated carousel door, on demand, if doing so will not cause a safety hazard or an operational risk.",,,,
+Technical Requirement,GDP-GDSTR-131,"Synchronize methods, handling rules, and action/alert levels in a cluster","The System shall synchronize methods, handling rules, and action/alert levels among all individual instruments within a cluster.",,,,
+Technical Requirement,GDP-GDSTR-132,Configurable time period for forecasting available slots,"The System Software shall provide a user configurable parameter to specify the time period, in increments of an hour, for forecasting how many incubator cassette slots will become newly available, with default 1 hour and maximum 999 hours.",Verification,GDP-Verfication-1695,GDP-PREQ-174 Cluster Status Dashboard contents,"Status of Dashboard cluster Jama PRD GDP-PREQ-173 TFS-3787
+
+
+  
+
+
+    Cluster enable   
+
+
+        
+
+
+  
+
+
+    Cluster Dash board in Main menu   
+
+
+        
+
+
+    Cluster Dashboard screen   
+
+
+        
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-132,Configurable time period for forecasting available slots,"The System Software shall provide a user configurable parameter to specify the time period, in increments of an hour, for forecasting how many incubator cassette slots will become newly available, with default 1 hour and maximum 999 hours.",Verification,GDP-Verfication-1697,GDP-PREQ-174 Cluster status Dash Board System number,"Status of Dashboard cluster Jama PRD GDP-PREQ-173 TFS-3787
+
+
+  
+
+
+    Cluster enable   
+
+
+        
+
+
+  
+
+
+    Cluster Dash board in Main menu   
+
+
+        
+
+
+    Cluster Dashboard screen   
+
+
+        
+
+
+  
+
+
+ Asset Tag setting
+
+
+  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-132,Configurable time period for forecasting available slots,"The System Software shall provide a user configurable parameter to specify the time period, in increments of an hour, for forecasting how many incubator cassette slots will become newly available, with default 1 hour and maximum 999 hours.",Verification,GDP-Verfication-1698,GDP-PREQ-174 Cluster status Dash Board Location,"Status of Dashboard cluster Jama PRD GDP-PREQ-173 TFS-3787
+
+
+  
+
+
+    Cluster enable   
+
+
+        
+
+
+  
+
+
+    Cluster Dash board in Main menu   
+
+
+        
+
+
+    Cluster Dashboard screen   
+
+
+        
+
+
+   Location Setting in General Settings  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-132,Configurable time period for forecasting available slots,"The System Software shall provide a user configurable parameter to specify the time period, in increments of an hour, for forecasting how many incubator cassette slots will become newly available, with default 1 hour and maximum 999 hours.",Verification,GDP-Verfication-1699,GDP-PREQ-174 Cluster status Dash Board Free,"Status of Dashboard cluster Jama PRD GDP-PREQ-173 TFS-3787
+
+
+  
+
+
+    Cluster enable   
+
+
+        
+
+
+  
+
+
+    Cluster Dash board in Main menu   
+
+
+        
+
+
+    Cluster Dashboard screen   
+
+
+        
+
+
+  
+
+
+ Incubator count
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-133,Available Slot Time Period parameter default,The System Software shall set the default value for the Available Slot Time Reporting Period parameter to 1 hour,,,,
+Technical Requirement,GDP-GDSTR-134,Identification of physical location,The System Software shall provide a means to identify the physical location of the System,Verification,GDP-Verfication-1698,GDP-PREQ-174 Cluster status Dash Board Location,"Status of Dashboard cluster Jama PRD GDP-PREQ-173 TFS-3787
+
+
+  
+
+
+    Cluster enable   
+
+
+        
+
+
+  
+
+
+    Cluster Dash board in Main menu   
+
+
+        
+
+
+    Cluster Dashboard screen   
+
+
+        
+
+
+   Location Setting in General Settings  
+
+
+  
+
+
+  "
+Technical Requirement,GDP-GDSTR-135,Save selected report items as individual PDF,The System Software shall save each selected report item as an individual PDF file.,,,,
+Technical Requirement,GDP-GDSTR-136,Print selected report items as an individual document,The System Software shall print each selected report item as an individual document.,,,,
+Technical Requirement,GDP-GDSTR-137,Disable AAL edit with note when created via LIMS order,"The System Software shall remove the ability to edit Action Alert Levels, with associated informative note to user, for those created as the result of the LIMS order request.",,,,
+Technical Requirement,GDP-GDSTR-138,"Overwrite default methods, handling rules, and Action Alert Levels.","The System Software shall allow default methods, handling rules, and Action Alert Levels to be overwritten.",,,,
+Technical Requirement,GDP-GDSTR-139,Graphically represent available cassette capacity,The System Software shall graphically represent the available cassette capacity relative to the maximum loadable system cassette capacity,,,,
